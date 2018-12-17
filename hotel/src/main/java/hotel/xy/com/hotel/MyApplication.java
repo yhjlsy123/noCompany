@@ -5,6 +5,7 @@ import android.app.Application;
 
 import java.util.concurrent.TimeUnit;
 
+import hotel.xy.com.hotel.utils.ToastUtils;
 import hotel.xy.com.hotel.utils.http.CookieJarImpl;
 import hotel.xy.com.hotel.utils.http.OkHttpUtils;
 import hotel.xy.com.hotel.utils.http.PersistentCookieStore;
@@ -14,6 +15,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        ToastUtils.context = this;
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(10000L, TimeUnit.MILLISECONDS) //链接超时
                 .readTimeout(10000L, TimeUnit.MILLISECONDS) //读取超时

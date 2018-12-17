@@ -17,7 +17,7 @@ import hotel.xy.com.hotel.utils.http.OkHttpUtils;
 import hotel.xy.com.hotel.utils.http.OnRequest;
 import okhttp3.Call;
 
-public class MainActivity extends BaseActivity implements OnRequest {
+public class MainActivity extends BaseActivity {
     private String mServiceDate = "2018-04-03";
     private int startGroup = -1;
     private int endGroup = -1;
@@ -58,17 +58,8 @@ public class MainActivity extends BaseActivity implements OnRequest {
 
     @Override
     public void onSuccess(Object response, int id, String tag) {
-        Toast.makeText(this, "成功", Toast.LENGTH_LONG).show();
+
 
     }
 
-    @Override
-    public void onFail(Call call, Exception e, int id) {
-        Toast.makeText(this, "失败", Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void inProgress(float progress, long total, int id) {
-
-    }
 }
