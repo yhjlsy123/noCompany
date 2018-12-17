@@ -4,7 +4,9 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 
+import hotel.xy.com.hotel.MainActivity;
 import hotel.xy.com.hotel.R;
+import hotel.xy.com.hotel.utils.JumpUtils;
 
 public class SplashActivity extends BaseActivity {
     private static final int REQUEST_CODE = 0; // 请求码
@@ -33,6 +35,8 @@ public class SplashActivity extends BaseActivity {
         // 拒绝时, 关闭页面, 缺少主要权限, 无法运行
         if (requestCode == REQUEST_CODE && resultCode == PermissionsActivity.PERMISSIONS_DENIED) {
             finish();
+        } else {
+            JumpUtils.jumpAcitvityOnePram(SplashActivity.this, MainActivity.class, null);
         }
     }
 }
