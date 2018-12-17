@@ -1,6 +1,5 @@
 package hotel.xy.com.hotel.utils.http;
 
-import com.zhy.http.okhttp.utils.Exceptions;
 
 import java.util.Map;
 

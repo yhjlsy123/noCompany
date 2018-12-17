@@ -1,12 +1,6 @@
 package hotel.xy.com.hotel.utils.http;
 
 import com.alibaba.fastjson.JSON;
-import com.zhy.http.okhttp.builder.GetBuilder;
-import com.zhy.http.okhttp.builder.HeadBuilder;
-import com.zhy.http.okhttp.builder.OtherRequestBuilder;
-import com.zhy.http.okhttp.builder.PostFileBuilder;
-import com.zhy.http.okhttp.builder.PostStringBuilder;
-import com.zhy.http.okhttp.utils.Platform;
 
 import java.io.IOException;
 import java.util.concurrent.Executor;
