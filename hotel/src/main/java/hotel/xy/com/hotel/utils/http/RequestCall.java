@@ -1,8 +1,11 @@
 package hotel.xy.com.hotel.utils.http;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import hotel.xy.com.hotel.bean.Test;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -67,9 +70,8 @@ public class RequestCall {
         return okHttpRequest.generateRequest(callback);
     }
 
-    public void execute(OnRequest callback, Class result) {
+    public void execute(OnRequest callback, Class<?> result) {
         buildCall(callback);
-
         OkHttpUtils.getInstance().execute(this, callback, result);
     }
 

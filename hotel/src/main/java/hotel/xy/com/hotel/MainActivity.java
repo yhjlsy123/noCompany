@@ -52,6 +52,7 @@ public class MainActivity extends BaseActivity implements OnRequest {
 
             }
         });
+//        popupWindow.create(view);
     }
 
 
@@ -63,7 +64,7 @@ public class MainActivity extends BaseActivity implements OnRequest {
 
     @Override
     public void onFail(Call call, Exception e, int id) {
-
+        Toast.makeText(this, "失败", Toast.LENGTH_LONG).show();
     }
 
     @Override

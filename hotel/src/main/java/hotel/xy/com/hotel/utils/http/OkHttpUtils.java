@@ -1,7 +1,5 @@
 package hotel.xy.com.hotel.utils.http;
 
-import android.util.Log;
-
 import com.alibaba.fastjson.JSON;
 
 import java.io.IOException;
@@ -109,8 +107,6 @@ public class OkHttpUtils {
                         sendFailResultCallback(call, new IOException("request failed , reponse's code is : " + response.code()), callback, id);
                         return;
                     }
-                    Log.i("lsy", response.request().url().toString());
-                    Log.i("lsy", response.body().string());
 
                     Object o = JSON.parseObject(response.body().string(), result);
                     Object tag = call.request().tag();
