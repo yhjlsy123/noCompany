@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
 /**
  * Created by zhy on 15/12/14.
  */
@@ -13,7 +14,7 @@ public class PostFormBuilder extends OkHttpRequestBuilder<PostFormBuilder> imple
 
     @Override
     public RequestCall build() {
-        return new PostFormRequest(url, tag, params, headers, id).build();
+        return new PostFormRequest(url, tag, result, params, headers, id).build();
     }
 
     public PostFormBuilder files(String key, Map<String, File> files) {

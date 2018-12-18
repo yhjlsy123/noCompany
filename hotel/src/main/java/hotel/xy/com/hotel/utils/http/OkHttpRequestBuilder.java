@@ -8,7 +8,8 @@ import java.util.Map;
  */
 public abstract class OkHttpRequestBuilder<T extends OkHttpRequestBuilder> {
     protected String url;
-    protected Object tag;
+    protected String tag;
+    protected Class<?> result;
     protected Map<String, String> headers;
     protected Map<String, Object> params;
     protected int id;
@@ -24,8 +25,13 @@ public abstract class OkHttpRequestBuilder<T extends OkHttpRequestBuilder> {
     }
 
 
-    public T tag(Object tag) {
+    public T tag(String tag) {
         this.tag = tag;
+        return (T) this;
+    }
+
+    public T restult(Class<?> result) {
+        this.result = result;
         return (T) this;
     }
 

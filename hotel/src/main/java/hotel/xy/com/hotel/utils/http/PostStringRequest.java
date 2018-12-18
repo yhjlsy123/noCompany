@@ -17,8 +17,8 @@ public class PostStringRequest extends OkHttpRequest {
     private MediaType mediaType;
 
 
-    public PostStringRequest(String url, Object tag, Map<String, Object> params, Map<String, String> headers, String content, MediaType mediaType, int id) {
-        super(url, tag, params, headers, id);
+    public PostStringRequest(String url, String tag, Class<?> result, Map<String, Object> params, Map<String, String> headers, String content, MediaType mediaType, int id) {
+        super(url, tag, result, params, headers, id);
         this.content = content;
         this.mediaType = mediaType;
 

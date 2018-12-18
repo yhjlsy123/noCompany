@@ -1,23 +1,29 @@
 package hotel.xy.com.hotel;
 
 import android.os.Bundle;
-import android.widget.Toast;
+import android.os.Environment;
 
-
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import hotel.xy.com.hotel.at.BaseActivity;
 import hotel.xy.com.hotel.bean.Test;
+import hotel.xy.com.hotel.utils.ToastUtils;
 import hotel.xy.com.hotel.utils.calander.CalendarUtil;
 import hotel.xy.com.hotel.utils.calander.DateInfo;
 import hotel.xy.com.hotel.utils.calander.DatePopupWindow;
 import hotel.xy.com.hotel.utils.http.OkHttpUtils;
-import hotel.xy.com.hotel.utils.http.OnRequest;
+import hotel.xy.com.hotel.view.TitleView;
 import okhttp3.Call;
 
 public class MainActivity extends BaseActivity {
+    @BindView(R.id.title_main)
+    TitleView titleMain;
     private String mServiceDate = "2018-04-03";
     private int startGroup = -1;
     private int endGroup = -1;
@@ -29,8 +35,9 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         Map<String, Object> pram = new HashMap<>();
-        OkHttpUtils.post().url("http://api.map.baidu.com/telematics/v3/weather?location=%E5%98%89%E5%85%B4&output=json&ak=5slgyqGDENN7Sy7pw29IUvrZ").tag("dddd").params(pram).build().execute(this, Test.class);
+        OkHttpUtils.post().url("http://api.map.baidu.com/telematics/v3/weather?location=%E5%98%89%E5%85%B4&output=json&ak=5slgyqGDENN7Sy7pw29IUvrZ").tag("dddd").restult(Test.class).params(pram).build().execute(this);
         DatePopupWindow popupWindow = new DatePopupWindow(MainActivity.this, mServiceDate);
         //根据4个参数初始化
         if (startchild != -1 && startGroup != -1 && endGroup != -1 && endchild != -1) {
@@ -53,13 +60,14 @@ public class MainActivity extends BaseActivity {
             }
         });
 //        popupWindow.create(view);
+
+
     }
 
 
     @Override
     public void onSuccess(Object response, int id, String tag) {
-
-
+        ToastUtils.show(tag + "成功");
     }
 
 }

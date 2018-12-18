@@ -70,9 +70,9 @@ public class RequestCall {
         return okHttpRequest.generateRequest(callback);
     }
 
-    public void execute(OnRequest callback, Class<?> result) {
+    public void execute(OnRequest callback) {
         buildCall(callback);
-        OkHttpUtils.getInstance().execute(this, callback, result);
+        OkHttpUtils.getInstance().execute(this, callback);
     }
 
     public Call getCall() {

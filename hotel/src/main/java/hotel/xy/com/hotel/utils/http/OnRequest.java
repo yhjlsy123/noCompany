@@ -1,5 +1,6 @@
 package hotel.xy.com.hotel.utils.http;
 
+
 import okhttp3.Call;
 
 public interface OnRequest {

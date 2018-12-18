@@ -12,20 +12,22 @@ import okhttp3.RequestBody;
  */
 public abstract class OkHttpRequest {
     protected String url;
-    protected Object tag;
+    protected String tag;
+    protected Class<?> result;
     protected Map<String, Object> params;
     protected Map<String, String> headers;
     protected int id;
 
     protected Request.Builder builder = new Request.Builder();
 
-    protected OkHttpRequest(String url, Object tag,
+    protected OkHttpRequest(String url, String tag, Class<?> result,
                             Map<String, Object> params, Map<String, String> headers, int id) {
         this.url = url;
         this.tag = tag;
         this.params = params;
         this.headers = headers;
         this.id = id;
+        this.result = result;
 
         if (url == null) {
             Exceptions.illegalArgument("url can not be null.");

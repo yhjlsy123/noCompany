@@ -85,10 +85,8 @@ public class OkHttpUtils {
         return new OtherRequestBuilder(METHOD.PATCH);
     }
 
-    public void execute(final RequestCall requestCall, final OnRequest callback, final Class result) {
-//        final Callback finalCallback = callback;
+    public void execute(final RequestCall requestCall, final OnRequest callback) {
         final int id = requestCall.getOkHttpRequest().getId();
-
         requestCall.getCall().enqueue(new okhttp3.Callback() {
             @Override
             public void onFailure(Call call, final IOException e) {
@@ -107,8 +105,7 @@ public class OkHttpUtils {
                         sendFailResultCallback(call, new IOException("request failed , reponse's code is : " + response.code()), callback, id);
                         return;
                     }
-
-                    Object o = JSON.parseObject(response.body().string(), result);
+                    Object o = JSON.parseObject(response.body().string(), requestCall.getOkHttpRequest().result);
                     Object tag = call.request().tag();
                     sendSuccessResultCallback(o, callback, id, tag);
                 } catch (Exception e) {
