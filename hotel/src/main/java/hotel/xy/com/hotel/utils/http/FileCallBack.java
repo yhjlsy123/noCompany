@@ -2,7 +2,6 @@ package hotel.xy.com.hotel.utils.http;
 
 import android.util.Log;
 
-import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
