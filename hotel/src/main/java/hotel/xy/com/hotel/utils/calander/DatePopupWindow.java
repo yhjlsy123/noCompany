@@ -34,6 +34,29 @@ import hotel.xy.com.hotel.databinding.PopupwindowHotelDateBinding;
 
 /**
  * Created by Administrator on 2018/3/2.
+ * <p>
+ * DatePopupWindow popupWindow = new DatePopupWindow(MainActivity.this, mServiceDate);
+ * //根据4个参数初始化
+ * if (startchild != -1 && startGroup != -1 && endGroup != -1 && endchild != -1) {
+ * popupWindow.setInit(startGroup, startchild, endGroup, endchild);
+ * } else {
+ * //设置根据mServiceDate设定今天和明天日期
+ * popupWindow.setDefaultSelect();
+ * }
+ * popupWindow.setDateOnClickListener(new DatePopupWindow.DateOnClickListener() {
+ *
+ * @Override public void getDate(List<DateInfo> list, int startGroupPosition, int startChildPosition, int endGroupPosition, int endChildPosition) {
+ * startGroup = startGroupPosition;
+ * startchild = startChildPosition;
+ * endGroup = endGroupPosition;
+ * endchild = endChildPosition;
+ * String mStartTime = CalendarUtil.FormatDate(list.get(startGroupPosition).getList().get(startChildPosition).getDate());
+ * <p>
+ * String mEndTime = CalendarUtil.FormatDate(list.get(endGroupPosition).getList().get(endChildPosition).getDate());
+ * <p>
+ * }
+ * });
+ * //        popupWindow.create(view);
  */
 
 public class DatePopupWindow extends PopupWindow {

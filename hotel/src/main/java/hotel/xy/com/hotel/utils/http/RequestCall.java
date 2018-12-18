@@ -87,9 +87,9 @@ public class RequestCall {
         return okHttpRequest;
     }
 
-    public Response execute() throws IOException {
+    public void execute(FileCallBack callBack) {
         buildCall(null);
-        return call.execute();
+        OkHttpUtils.getInstance().executeDownLoad(this, callBack);
     }
 
     public void cancel() {

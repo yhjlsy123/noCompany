@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:title="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="25dp">
-
-    <hotel.xy.com.hotel.view.TitleView
-        android:id="@+id/title_main"
+    android:orientation="vertical">
+    <android.support.v4.view.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimary"
-        title:left_text="返回"
-        title:left_text_drawable_left="@mipmap/back_normal"
-        title:right_image_two="@mipmap/icon_crop_rotate"
-        title:right_text="@string/app_name"
-        title:right_text_drawable_right="@mipmap/bar_button_right"
-        title:small_text_size="15sp"
-        title:title_name="标题"
-        title:title_text_color="@android:color/white"
-        title:title_text_size="20sp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/three_viewpager"></android.support.v4.view.ViewPager>
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/three_tablayout"
+        app:tabBackground="@drawable/selector_bg"
+        style="@style/MyCustomTabLayout"></android.support.design.widget.TabLayout>
 
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -15,7 +15,7 @@ import java.io.File;
 public class ComnUtils {
 
     @TargetApi(Build.VERSION_CODES.O)
-    private void openFile(File file, Activity at) {
+    public static void openFile(File file, Activity at) {
         File apkFile = file;
         //判读版本是否在8.0以上
         if (Build.VERSION.SDK_INT >= 26) {
@@ -29,7 +29,7 @@ public class ComnUtils {
         }
     }
 
-    private void install(File file, Activity at) {
+    private static void install(File file, Activity at) {
         Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setAction(android.content.Intent.ACTION_VIEW);

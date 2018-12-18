@@ -43,7 +43,7 @@
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="hotel.xy.com.hotel.fileprovider"
+            android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

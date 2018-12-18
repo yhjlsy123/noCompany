@@ -120,6 +120,23 @@ public class OkHttpUtils {
     }
 
 
+    public void executeDownLoad(final RequestCall requestCall, final FileCallBack callback) {
+        final int id = requestCall.getOkHttpRequest().getId();
+        requestCall.getCall().enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(Call call, final IOException e) {
+                callback.fail(call, e);
+            }
+
+            @Override
+            public void onResponse(final Call call, final Response response) {
+                callback.saveFile(response, id);
+
+            }
+        });
+    }
+
+
     public void sendFailResultCallback(final Call call, final Exception e, final OnRequest callback, final int id) {
         if (callback == null) return;
 
