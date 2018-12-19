@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <layer-list>
+            <!--    只有上下边框的shape    -->
+            <item>
+                <shape>
+                    <!--    边框颜色    -->
+                    <solid android:color="@color/hint" />
+                </shape>
+            </item>
+            <!--    想保留哪一边就设置哪一边边框就好了，列如只有上边框：top="1dp"    -->
+            <item android:bottom="1dp" android:top="1dp">
+                <shape>
+                    <solid android:color="@color/white_p" />
+                </shape>
+            </item>
+
+        </layer-list>
+
+    </item>
+    <item android:state_pressed="false">
+        <layer-list>
+            <!--    只有上下边框的shape    -->
+            <item>
+                <shape>
+                    <!--    边框颜色    -->
+                    <solid android:color="@color/hint" />
+                </shape>
+            </item>
+            <!--    想保留哪一边就设置哪一边边框就好了，列如只有上边框：top="1dp"    -->
+            <item android:bottom="1dp" android:top="1dp">
+                <shape>
+                    <solid android:color="@color/white" />
+                </shape>
+            </item>
+
+        </layer-list>
+
+    </item>
+
+</selector>

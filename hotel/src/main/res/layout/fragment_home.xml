@@ -1,14 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fg.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:src="@mipmap/banner" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/shap_white_corner"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/map_icon"
+            android:text="济南" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/home_mm_icon"
+            android:text="我的位置"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/date_caintainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shap_white_button_t_b"
+            android:clickable="true"
+            android:padding="@dimen/dp_10"
+            app:layout_constraintTop_toBottomOf="@+id/map">
+
+            <ImageView
+                android:id="@+id/date_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/home_order_icon" />
+
+            <TextView
+                android:id="@+id/s_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/date_icon"
+                android:text="周三" />
+
+            <TextView
+                android:id="@+id/s_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s_day"
+                android:layout_toRightOf="@+id/date_icon"
+                android:text="2018-12-24" />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shap_border_blue"
+                android:text="3" />
+
+            <TextView
+                android:id="@+id/e_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/e_date"
+                android:text="周三" />
+
+            <TextView
+                android:id="@+id/e_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/e_day"
+                android:layout_toLeftOf="@+id/l_go"
+                android:text="2018-12-24" />
+
+            <ImageView
+                android:id="@+id/l_go"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/l_arrow" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/price"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shap_white_button_b"
+            android:drawableLeft="@mipmap/rat"
+            android:drawableRight="@mipmap/l_arrow"
+            android:gravity="left|center_vertical"
+            android:hint="价格/星级"
+            android:padding="@dimen/dp_10"
+            app:layout_constraintTop_toBottomOf="@+id/date_caintainer" />
+
+        <Button
+            android:id="@+id/h_name"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shap_white_button_b"
+            android:drawableLeft="@mipmap/m_icon"
+            android:drawableRight="@mipmap/l_arrow"
+            android:gravity="left|center_vertical"
+            android:hint="酒店名"
+            android:padding="@dimen/dp_10"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
+
+        <Button
+            android:id="@+id/order"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/blue_corner_button"
+            android:text="订酒店"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/h_name" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_bj_h_name">
+
+            <hotel.xy.com.hotel.view.CircleImageView
+                android:id="@+id/h_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher" />
+
+        </RelativeLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
 
 </FrameLayout>

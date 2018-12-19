@@ -23,6 +23,7 @@ import hotel.xy.com.hotel.bean.Test;
 import hotel.xy.com.hotel.fg.HomeFragment;
 import hotel.xy.com.hotel.fg.SetFragment;
 import hotel.xy.com.hotel.utils.ComnUtils;
+import hotel.xy.com.hotel.utils.StatusBarUtil;
 import hotel.xy.com.hotel.utils.ToastUtils;
 import hotel.xy.com.hotel.utils.http.FileCallBack;
 import hotel.xy.com.hotel.utils.http.OkHttpUtils;
@@ -53,7 +54,7 @@ public class MainActivity extends BaseActivity {
         fragments.add(HomeFragment.newInstance("1", "首页"));
         fragments.add(SetFragment.newInstance("2", "设置"));
 
-        String[] titles = new String[]{"首页", "流量", "社区", "关于"};
+        String[] titles = new String[]{"订酒店", "我的订单", "个人中心"};
 
         //设置适配器
         TitleFragmentPagerAdapter adapter = new TitleFragmentPagerAdapter(getSupportFragmentManager(), fragments, titles);
@@ -69,10 +70,10 @@ public class MainActivity extends BaseActivity {
                     d = getResources().getDrawable(R.drawable.tab_home);
                     break;
                 case 1:
-                    d = getResources().getDrawable(R.drawable.tab_home);
+                    d = getResources().getDrawable(R.drawable.tab_order);
                     break;
                 case 2:
-                    d = getResources().getDrawable(R.drawable.tab_home);
+                    d = getResources().getDrawable(R.drawable.tab_set);
                     break;
                 case 3:
                     d = getResources().getDrawable(R.drawable.tab_home);
