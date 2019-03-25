@@ -1,2 +1,2 @@
-include ':hotel','appTest'
+include ':hotel', ':appTest', ':PushSDK', ':app'
 
